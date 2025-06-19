@@ -5,7 +5,7 @@ import latexify
 #x=input()
 matrix = Matrix([[2, 3], [3, 4]])
 matrix_latex = latex(matrix)  #this is a raw LaTeX string
-
+#sopenc
 #latexify-py for symbolic function representation
 @latexify.function
 def row_op(x):

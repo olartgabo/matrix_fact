@@ -1,4 +1,2 @@
-.gitattributes
-.gz
+*.gz
 venv/
-steps/
