@@ -53,7 +53,7 @@ iden = clean_matrix(iden)
 
 matrix_sym = Matrix(matrix)
 matrix_latex = latex(matrix_sym)
-
+origmat=matrix_latex
 
 iden_sym = Matrix(iden)
 iden_latex = latex(iden_sym)
@@ -61,7 +61,7 @@ iden_latex = latex(iden_sym)
 
 doc.append(Math(data=[]))
 
-with doc.create(Section("Reduccion y factorizacion de matriz")):
+with doc.create(Section(" Factorización A=LU ")):
     doc.append("Vamos a hacer reduccion de Gauss tomando en cuenta la siguiente estructura:")
     doc.append(Math(data=["\nFila[x]-(k)Fila[y]"]))
     doc.append("Siendo:") 
@@ -92,12 +92,15 @@ with doc.create(Section("Reduccion y factorizacion de matriz")):
                 iden_latex = latex(iden_sym)
                 doc.append(Math(data=[f"Fila[{indexcol+1}]-({selec})*Fila[{pivot+1}]"]))
                 matrix_latex = latex(matrix_sym)
-                doc.append(Math(data=[NoEscape(matrix_latex)]))
+                doc.append(Math(data=[NoEscape(iden_latex),NoEscape(matrix_latex)]))
         
         print(numbers)
         #print(impo)
         #for xd in range(dim-1): #d-1 porq reduccion no es necessaria hasta el ultimo
-        
+    with doc.create(Subsection("Resultado")):
+        doc.append("Factorizacion matricial:")
+        doc.append(Math(data=["\n A     = L       U"]))
+        doc.append(Math(data=[NoEscape(origmat), "=",NoEscape(iden_latex),NoEscape(matrix_latex)]))
         
         
 
