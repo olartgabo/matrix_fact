@@ -39,22 +39,22 @@ Al ingresar una matriz de tamaño 3x3, el programa pedirá lo siguiente:
 ```text
 Ingresa la dimension de tu matriz cuadrada
 3
-Ingresa el valor para la posicion [1][1]: 2
-Ingresa el valor para la posicion [1][2]: 3
-Ingresa el valor para la posicion [1][3]: 1
+Ingresa el valor para la posicion [1][1]: 1
+Ingresa el valor para la posicion [1][2]: 5
+Ingresa el valor para la posicion [1][3]: 3
 ...
 ```
 
-En el PDF generado se incluirá algo similar a:
+En el PDF generado:
 
 ```
 Matriz Ingresada:
-⎡2  3  1⎤
-⎢4  7  2⎥
-⎣6  8  3⎦
+⎡1  5  3⎤
+⎢4 -1  0⎥
+⎣2  3  6⎦
 
 Procedimiento:
-Fila[2] - (2.0)*Fila[1]
+Fila[2] - (4)*Fila[1]
 ...
 
 Resultado:
