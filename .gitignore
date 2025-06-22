@@ -1,2 +1,5 @@
 *.gz
 venv/
+*.cph
+.gitattributes
+*.txt

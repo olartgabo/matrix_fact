@@ -1,6 +1,5 @@
 from pylatex import Document, Section, Subsection,Math, NoEscape
 from sympy import Matrix, latex
-import latexify
 doc = Document()
 
 def reduccionGauss(drow, urow,column):
@@ -21,11 +20,7 @@ def clean_matrix(mat):
                 cleaned_row.append(val)
         cleaned.append(cleaned_row)
     return cleaned
-
-
-
-   
-    #doc.append(Math(data=[NoEscape(str(row_op))]))    
+ 
 
 print("Ingresa la dimension de tu matriz cuadrada")
 dim = int(input())
@@ -54,10 +49,8 @@ iden = clean_matrix(iden)
 matrix_sym = Matrix(matrix)
 matrix_latex = latex(matrix_sym)
 origmat=matrix_latex
-
 iden_sym = Matrix(iden)
 iden_latex = latex(iden_sym)
-#,NoEscape(iden_latex)
 
 doc.append(Math(data=[]))
 
@@ -71,11 +64,6 @@ with doc.create(Section(" Factorización A=LU ")):
     doc.append("La fila a la cual pertenece el pivot\n")
     doc.append(Math(data=["\n(k)"]))
     doc.append("El numero a ser multiplicado para permitir la reduccion\n")
-    #doc.append(Math(data=[NoEscape(iden_latex)]))
-    #aqui ttengo que hacer reduccion de gauss mientras voy guardando los valores
-    #desde 1 hasta dim
-    #despues desde 2 hasta dim en la siguiente columna y asi
-    #hasta que sea dim-1 hasta dim
     with doc.create(Subsection("Matriz Ingresada: ")):
         doc.append(Math(data=[NoEscape(matrix_latex)]))
     with doc.create(Subsection("Procedimiento")):
@@ -95,8 +83,7 @@ with doc.create(Section(" Factorización A=LU ")):
                 doc.append(Math(data=[NoEscape(iden_latex),NoEscape(matrix_latex)]))
         
         print(numbers)
-        #print(impo)
-        #for xd in range(dim-1): #d-1 porq reduccion no es necessaria hasta el ultimo
+       
     with doc.create(Subsection("Resultado")):
         doc.append("Factorizacion matricial:")
         doc.append(Math(data=["\n A     = L       U"]))
